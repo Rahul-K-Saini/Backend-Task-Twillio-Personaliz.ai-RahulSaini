@@ -38,7 +38,7 @@ export const handleUpdateContact = async(req,res)=>{
     try {
         // Update the contact in the database
         const contact = await sql`update contacts set first_name = ${first_name},last_name = ${last_name},email = ${email},mobile_number = ${mobile_number} where id = ${contact_id}`
-        return res.status(200).send(contact);
+        return res.status(200).send("Contac updated successfully");
     }
     catch (e) {
         console.log(e);
@@ -52,7 +52,7 @@ export const handleDeleteContact = async(req,res)=>{
     try {
         // Delete the contact from the database
         const contact = await sql`delete from contacts where id = ${contact_id}`
-        return res.status(200).send(contact);
+        return res.status(200).send("Contact Deleted Successfully");
     }
     catch (e) {
         console.log(e);
